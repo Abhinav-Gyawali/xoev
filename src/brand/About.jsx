@@ -1,9 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import NavBar from '../elements/NavBar';
 
 function About(props) {
   return (
-    <div>About</div>
+    <div>
+    <NavBar/>
+    </div>
   )
 }
 

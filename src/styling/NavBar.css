@@ -1,0 +1,56 @@
+:root {
+  --primary-color: #fdfdfb ; /* Navy Blue */
+  --secondary-color: #232323 ; /* White */
+  --accent-color: #7db5ed; /* Coral */
+  --neutral-color: #F4F4F4; /* Light Gray */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.navbar-brand a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.navbar-links {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.navbar-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+.navbar-icons{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.navbar-icons a {
+  text-decoration: none;
+  font-size: 20px;
+  color:var(--secondary-color);
+}
+
+.navbar .icon-link{
+  background: var(--neutral-color);
+  padding:8px 10px;
+  border-radius:10px;
+  display:flex;
+  justify-items: center;
+  align-items:center;
+}
