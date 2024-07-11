@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 import NavBar from '../elements/NavBar';
 
 function Home(props) {
-  return (<div>Home</div>)
+  return (
+  <div>
+  <NavBar/>
+  </div>
+  )
 }
 
 Home.propTypes = {}

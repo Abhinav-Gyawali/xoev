@@ -1,9 +1,4 @@
-:root {
-  --primary-color: #fdfdfb ; /* Navy Blue */
-  --secondary-color: #232323 ; /* White */
-  --accent-color: #7db5ed; /* Coral */
-  --neutral-color: #F4F4F4; /* Light Gray */
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap');
 
 .navbar {
   display: flex;
@@ -12,6 +7,17 @@
   padding: 20px;
   background-color: var(--primary-color);
   border-bottom: 1px solid var(--primary-color);
+  gap: 20px;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:hover, a:active {
+  border-bottom: 1px solid var(--secondary-background);
+  font-weight: 500;
 }
 
 .navbar-brand a {
@@ -25,16 +31,23 @@
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
+  flex: 1;
+  justify-content: flex-end;
+  transition: all 0.5s ease;
+}
+
+#links-left {
+  justify-content: flex-start;
 }
 
 .navbar-links a {
   margin: 0 15px;
   text-decoration: none;
   color: var(--secondary-color);
-  font-size: 16px;
+  font: var(--font-inter-400-16);
 }
 
-.navbar-icons{
+.navbar-icons {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -43,14 +56,74 @@
 .navbar-icons a {
   text-decoration: none;
   font-size: 20px;
-  color:var(--secondary-color);
+  color: var(--secondary-color);
 }
 
-.navbar .icon-link{
+.navbar .icon-link {
   background: var(--neutral-color);
-  padding:8px 10px;
-  border-radius:10px;
-  display:flex;
+  padding: 8px 10px;
+  border-radius: 10px;
+  display: flex;
   justify-items: center;
-  align-items:center;
+  align-items: center;
+}
+
+.navbar .search-container {
+  background: var(--neutral-color);
+  align-items: center;
+  display: flex;
+  border-radius: 10px;
+}
+
+.navbar .search-container input {
+  border: 0px;
+  z-index: 1;
+  font-size: 16px;
+  width: 0px;
+  padding: 2px;
+  margin-left: 5px;
+  background: #fff;
+  border-radius: 8px;
+  transition: all 0.5s ease;
+}
+
+input#disabled {
+  pointer-events: none;
+}
+
+.navbar .search-container input#expanded {
+  width: 100px;
+  padding: 5px;
+}
+
+.navbar .icon-link.hamburger-menu {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .navbar .icon-link.hamburger-menu {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* adjust based on your navbar height */
+    left:10vw;
+    right: 0;
+    background: var(--primary-color);
+    width: 90vw;
+    text-align: left;
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-links a {
+    margin: 10px 0;
+    font-size:20px;
+    
+  }
+  
 }

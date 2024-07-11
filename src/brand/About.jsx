@@ -5,7 +5,7 @@ import NavBar from '../elements/NavBar';
 function About(props) {
   return (
     <div>
-    <NavBar/>
+    <NavBar linksLeft={true}/>
     </div>
   )
 }
