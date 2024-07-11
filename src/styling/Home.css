@@ -1,0 +1,49 @@
+.main {
+  font-family: Poppins, sans-serif;
+}
+.content{
+  padding:0vw 12vw;
+  overflow-x:hidden;
+}
+.main header {
+  text-align: left;
+    width: 76vw;
+    display: flex;
+    align-items: flex-end;
+}
+.main header img{
+  width:76vw;
+  border-radius:15px;
+}
+.main header .header{
+  position:absolute;
+  padding:50px;
+  color:var(--primary-color);
+}
+
+header .header h1{
+  font-weight: 800;
+}
+
+.main button {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+}
+
+@media(max-width:720px){
+  .content{
+    padding:0vw 5vw;
+  }
+  .main header{
+    width:90vw;
+  }
+  .main header img{
+    width:90vw;
+  }
+  .main header .header{
+    padding:10px;
+  }
+}

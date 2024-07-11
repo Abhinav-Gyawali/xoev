@@ -14,17 +14,18 @@ const NavBar = ({ linksLeft, searchExpand }) => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+  
+  
   return (
     <nav className="navbar">
       <div className="navbar-brand">
         <Link to="/">XOEV</Link>
       </div>
       <div className={`navbar-links ${menuOpen ? 'active' : ''}`} id={linksLeft ? 'links-left' : ''}>
-        <Link to="/about/">About</Link>
-        <Link to="/category/women">Women</Link>
-        <Link to="/category/men">Men</Link>
-        <Link to="/category/kids">Kids</Link>
+        <Link className="nav-link"  to="/about/">About</Link>
+        <Link className="nav-link" to="/category/women">Women</Link>
+        <Link className="nav-link" to="/category/men">Men</Link>
+        <Link className="nav-link" to="/category/kids">Kids</Link>
       </div>
       <div className="navbar-icons">
         <div className="search-container">

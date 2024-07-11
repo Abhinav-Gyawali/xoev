@@ -4,10 +4,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 30px;
   background-color: var(--primary-color);
   border-bottom: 1px solid var(--primary-color);
   gap: 20px;
+  z-index: 3;
 }
 
 a {
@@ -100,30 +101,32 @@ input#disabled {
   display: none;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .navbar .icon-link.hamburger-menu {
     display: flex;
   }
 
   .navbar-links {
-    display: none;
+    display: flex;
     flex-direction: column;
     position: absolute;
+    font-size:20px;
     top: 70px; /* adjust based on your navbar height */
-    left:10vw;
-    right: 0;
+    padding-left:10vw;
+    left:-100vw;
     background: var(--primary-color);
     width: 90vw;
     text-align: left;
+    justify-content: flex-start;
+    z-index: 3;
+    height:100vw;
   }
   .navbar-links.active {
-    display: flex;
+    left:0;
   }
 
   .navbar-links a {
-    margin: 10px 0;
+    padding: 10px 0;
     font-size:20px;
-    
   }
-  
 }

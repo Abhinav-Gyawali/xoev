@@ -1,15 +1,15 @@
 
-# [Your Clothing Brand] Website
+# XOEV Website
 
-Welcome to the [Your Clothing Brand] official website repository!
+Welcome to the XOEV official website repository!
 
 ## Overview
 
-This project is a React-based web application for [Your Clothing Brand]. It includes various features to showcase and manage products, allow user interaction, and facilitate online shopping.
+This project is a React-based web application for XOEV. It includes various features to showcase and manage products, allow user interaction, and facilitate online shopping.
 
 ## Features
 
-- **Homepage**: Introduces [Your Clothing Brand] and highlights featured collections.
+- **Homepage**: Introduces XOEV and highlights featured collections.
 - **Product Pages**: Detailed information and images for each product.
 - **Shopping Cart**: Allows users to add products to cart and proceed to checkout.
 - **User Authentication**: Register and login functionality for users.
@@ -18,15 +18,15 @@ This project is a React-based web application for [Your Clothing Brand]. It incl
 ## Technologies Used
 
 - **Frontend**: React, HTML, CSS (styled-components, etc.)
-- **Backend**: [Specify backend technologies if applicable, e.g., Node.js with Express]
-- **Database**: [Specify database system if applicable, e.g., MongoDB]
+- **Backend**: Probably Firebase or django
+- **Database**: Firebase Real Time Database
 
 ## Installation
 
 To run the website locally:
 
-1. Clone this repository: `git clone https://github.com/your-username/your-repository.git`
-2. Navigate to the project directory: `cd your-repository`
+1. Clone this repository: `git clone https://github.com/Abhinav-Gyawali/xoev.git`
+2. Navigate to the project directory: `cd xoev`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm start`
 5. Open your browser and visit: `http://localhost:3000`
@@ -56,7 +56,7 @@ your-project/
 
 ## Contributing
 
-We welcome contributions to improve [Your Clothing Brand] Website. To contribute:
+We welcome contributions to improve XOEV Website. To contribute:
 
 1. Fork the repository
 2. Create your feature branch: `git checkout -b feature/YourFeature`
@@ -66,8 +66,8 @@ We welcome contributions to improve [Your Clothing Brand] Website. To contribute
 
 ## License
 
-[Your Clothing Brand] Website is licensed under the [License Name] License. See the LICENSE file for more details.
+XOEV Website is licensed under the [License Name] License. See the LICENSE file for more details.
 
 ## Contact
 
-For questions or support, please contact [Your Contact Information].
+For questions or support, please contact contact@xoev.com.
