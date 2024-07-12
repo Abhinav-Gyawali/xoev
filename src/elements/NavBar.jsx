@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { FaSearch, FaUser, FaTimes, FaBars, FaShoppingCart } from 'react-icons/fa';
 import '../styling/NavBar.css'; // Create a CSS file for styling
 import { Link } from 'react-router-dom';
+import Logo from '../assets/Logo.jpg';
 
 const NavBar = ({ linksLeft, searchExpand }) => {
   const [search, setSearch] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [searchValue, setSearchValue] = useState();
+  
   useEffect(() => {
     setSearch(searchExpand);
   }, [searchExpand]);
@@ -14,12 +16,21 @@ const NavBar = ({ linksLeft, searchExpand }) => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  
+  const handleSearchButton = ()=> {
+    setSearch(!search);
+    if(search){
+      setSearchValue('');
+    }
+  }
+  const handleInputChange =(event)=>{
+    setSearchValue(event.target.value);
+  }
   
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <Link to="/">XOEV</Link>
+        
+        <Link to="/"><img class="brand-logo" src={Logo} /></Link>
       </div>
       <div className={`navbar-links ${menuOpen ? 'active' : ''}`} id={linksLeft ? 'links-left' : ''}>
         <Link className="nav-link"  to="/about/">About</Link>
@@ -30,9 +41,9 @@ const NavBar = ({ linksLeft, searchExpand }) => {
       <div className="navbar-icons">
         <div className="search-container">
           <div className="search-input">
-            <input type="text" id={!searchExpand && search ? "expanded" : "disabled"} />
+            <input type="text" value={searchValue} onChange={handleInputChange} id={ !searchExpand && search ? "expanded" : " disabled"} />
           </div>
-          <Link onClick={() => setSearch(!search)} className="icon-link">
+          <Link onClick={handleSearchButton } className="icon-link">
             {search ? <FaTimes /> : <FaSearch />}
           </Link>
         </div>

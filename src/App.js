@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/about/" element={<About/>} />
         <Route path="/contact/" element={<Contact/>} />
         {/* Handle 404 - Not Found */}
-        <Route element={<NotFound/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </Router>
   );

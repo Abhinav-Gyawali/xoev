@@ -1,62 +1,38 @@
 /* Section */
 .section {
-  margin: 20px;
+  width:100%;
 }
 
-.section-title {
+.section h2 {
   margin-bottom: 20px;
 }
 
-.section-items {
+.section .items {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 30px;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding-bottom: 10px; /* Add padding at the bottom to ensure space for scrollbar */
 }
 
-.section-item {
-  flex: 1 1 calc(25% - 20px);
+.section .items {
   text-align: center;
 }
 
-.section-item .item-image {
-  width: 100%;
+.section .items .item img {
+  width: 430px;
   border-radius: 10px;
 }
 
-.section-item .item-title {
+.section .items .item h1 {
   margin: 10px 0;
 }
 
-.section-item .item-price {
-  color: gray;
+.section .items .item p {
+  color: var(--text-color);
 }
-
-/* Skeleton Loader Styles */
-.section-item.skeleton {
-  background-color: #f0f0f0;
+@media (max-width:720px){
+  .section .items .item img {
+  width: 230px;
   border-radius: 10px;
-  padding: 10px;
 }
-
-.section-item .skeleton-image {
-  width: 100%;
-  height: 200px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.section-item .skeleton-text {
-  height: 20px;
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.section-item .skeleton-text-title {
-  width: 80%;
-}
-
-.section-item .skeleton-text-price {
-  width: 40%;
 }

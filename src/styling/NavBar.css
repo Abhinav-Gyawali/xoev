@@ -5,27 +5,34 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  background-color: var(--primary-color);
-  border-bottom: 1px solid var(--primary-color);
+  background-color: var(--background-color);
   gap: 20px;
   z-index: 3;
+  position:sticky;
+  top:0px;
 }
-
+.navbar .navbar-brand{
+  display:flex;
+  align-items: center;
+  gap:10px;
+}
+.navbar .brand-logo{
+  height:30px;
+  mix-blend-mode: multiply;
+}
 a {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
 }
 
 a:hover, a:active {
-  border-bottom: 1px solid var(--secondary-background);
+  border-bottom: 1px solid var(--text-background);
   font-weight: 500;
 }
 
-.navbar-brand a {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: var(--secondary-color);
+.navbar-brand {
+  align-items: center;
+  justify-content: center;
 }
 
 .navbar-links {
@@ -44,7 +51,7 @@ a:hover, a:active {
 .navbar-links a {
   margin: 0 15px;
   text-decoration: none;
-  color: var(--secondary-color);
+  color: var(--text-color);
   font: var(--font-inter-400-16);
 }
 
@@ -57,11 +64,11 @@ a:hover, a:active {
 .navbar-icons a {
   text-decoration: none;
   font-size: 20px;
-  color: var(--secondary-color);
+  color: var(--text-color);
 }
 
 .navbar .icon-link {
-  background: var(--neutral-color);
+  background: var(--native-color);
   padding: 8px 10px;
   border-radius: 10px;
   display: flex;
@@ -70,14 +77,16 @@ a:hover, a:active {
 }
 
 .navbar .search-container {
-  background: var(--neutral-color);
+  background: var(--native-color);
   align-items: center;
   display: flex;
   border-radius: 10px;
+  z-index:4;
 }
 
 .navbar .search-container input {
   border: 0px;
+  outline: 0px;
   z-index: 1;
   font-size: 16px;
   width: 0px;
@@ -93,7 +102,7 @@ input#disabled {
 }
 
 .navbar .search-container input#expanded {
-  width: 100px;
+  width:100px;
   padding: 5px;
 }
 
@@ -109,24 +118,34 @@ input#disabled {
   .navbar-links {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     font-size:20px;
     top: 70px; /* adjust based on your navbar height */
     padding-left:10vw;
     left:-100vw;
-    background: var(--primary-color);
+    background: var(--background-color);
     width: 90vw;
     text-align: left;
     justify-content: flex-start;
     z-index: 3;
-    height:100vw;
+    height:100vh;
   }
   .navbar-links.active {
     left:0;
   }
-
+  
   .navbar-links a {
     padding: 10px 0;
     font-size:20px;
+  }
+}
+@media(max-width:460px){
+  .search-container{
+    position:absolute;
+    top:70px;
+    right:30px;
+  }
+  .navbar{
+    padding-bottom:60px;
   }
 }

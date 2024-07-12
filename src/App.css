@@ -1,12 +1,55 @@
 :root {
-  --primary-color: #fdfdfb ; /* Navy Blue */
-  --secondary-color: #232323 ; /* White */
-  --accent-color: #002757; /* Coral */
-  --neutral-color: #F4F4F4; /* Light Gray */
-  --tap-background: #b2b2b2 ;
+  --primary-color: #002757;
+  --secondary-color: #2ecc71;
+  --native-color:#ebedf4;
+  --background-color: #f5f5f5;
+  --text-color: #333;
   --font-inter-400-16:500 16px Poppins , Sans-Serif;
 }
 
 body{
-  background: var(--primary-color);
+  background: var(--background-color);
+}
+
+
+/* Not Found */ 
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.error-page h1 {
+  font-size: 5rem;
+  color: var(--primary-color);
+}
+
+.error-page p {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.error-page a {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.error-page a:hover {
+  background-color: var(--secondary-color);
 }

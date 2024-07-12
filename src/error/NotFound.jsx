@@ -1,13 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import NavBar from '../elements/NavBar';
+import React from 'react';
+import {Link} from 'react-router-dom';
 
-function NotFound(props) {
+const ErrorPage = () => {
   return (
-    <div>Not Found</div>
-  )
-}
+    <>
+    <div className="error-page">
+      <h1>404</h1>
+      <p>Oops! The page you are looking for does not exist.</p>
+      <Link to="/">Go Back Home</Link>
+    </div>
+    </>
+  );
+};
 
-NotFound.propTypes = {}
-
-export default NotFound
+export default ErrorPage;

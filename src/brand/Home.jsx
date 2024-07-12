@@ -10,6 +10,7 @@ function Header() {
     <img src={asset1}/>
     <div className="header">
       <h1>The New Essentials</h1>
+      <p>Styles Redefined</p>
       <button>Shop Now</button>
       </div>
     </header>
@@ -24,9 +25,11 @@ function Home(props) {
   <NavBar/>
   <div className="content">
   <Header/>
-  <Section title="Featured" endpoint="https://api.example.com/featured" />
-      <Section title="New Arrivals" endpoint="https://api.example.com/new-arrivals" />
-      <Section title="Promotions" endpoint="https://api.example.com/promotions" />
+  <Section title="Featured" endpoint={env.process.REACT_API_CALLS + '/products'} />
+      <Section title="New Arrivals" endpoint={env.process.REACT_API_CALLS + '/products'} />
+      <Section title="Promotions" endpoint={env.process.REACT_API_CALLS + '/products'} />
+      <Section title="Promotions" endpoint={env.process.REACT_API_CALLS + '/products'}  />
+      <Section title="Promotions" endpoint={env.process.REACT_API_CALLS + '/products'}  />
     </div>
   </div>
   )
