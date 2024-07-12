@@ -25,11 +25,11 @@ function Home(props) {
   <NavBar/>
   <div className="content">
   <Header/>
-  <Section title="Featured" endpoint={env.process.REACT_API_CALLS + '/products'} />
-      <Section title="New Arrivals" endpoint={env.process.REACT_API_CALLS + '/products'} />
-      <Section title="Promotions" endpoint={env.process.REACT_API_CALLS + '/products'} />
-      <Section title="Promotions" endpoint={env.process.REACT_API_CALLS + '/products'}  />
-      <Section title="Promotions" endpoint={env.process.REACT_API_CALLS + '/products'}  />
+  <Section title="Featured" endpoint={process.env.REACT_API_CALLS + '/products'} />
+      <Section title="New Arrivals" endpoint={process.env.REACT_API_CALLS + '/products'} />
+      <Section title="Promotions" endpoint={process.env.REACT_API_CALLS + '/products'} />
+      <Section title="Promotions" endpoint={process.env.REACT_API_CALLS + '/products'}  />
+      <Section title="Promotions" endpoint={process.env.REACT_API_CALLS + '/products'}  />
     </div>
   </div>
   )
