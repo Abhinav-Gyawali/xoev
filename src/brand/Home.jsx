@@ -25,12 +25,12 @@ function Home(props) {
   <NavBar/>
   <div className="content">
   <Header/>
-  <Section title="Featured" endpoint='http://xoev-devapi.vercel.app/products'/>
-  <Section title="New Arrivals" endpoint='http://xoev-devapi.vercel.app/products'/>
-    <Section title="Promotions" endpoint='http://xoev-devapi.vercel.app/products'/>
-    <Section title="Featured" endpoint='http://xoev-devapi.vercel.app/products'/>
-  <Section title="New Arrivals" endpoint='http://xoev-devapi.vercel.app/products'/>
-    <Section title="Promotions" endpoint='http://xoev-devapi.vercel.app/products'/>
+  <Section title="Featured" endpoint={process.env.REACT_APP_API_CALLS + '/products'} />
+  <Section title="New Arrivals" endpoint={process.env.REACT_APP_API_CALLS + '/products'}/>
+    <Section title="Promotions" endpoint={process.env.REACT_APP_API_CALLS + '/products'}/>
+    <Section title="Featured" endpoint={process.env.REACT_APP_API_CALLS + '/products'}/>
+  <Section title="New Arrivals" endpoint={process.env.REACT_APP_API_CALLS + '/products'}/>
+    <Section title="Promotions" endpoint={process.env.REACT_APP_API_CALLS + '/products'}/>
     </div>
   </div>
   )
