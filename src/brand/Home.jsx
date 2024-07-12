@@ -25,8 +25,9 @@ function Home(props) {
   <NavBar/>
   <div className="content">
   <Header/>
-  <Section title="Featured" endpoint={process.env.REACT_API_CALLS + '/products'} />
-      <Section title="New Arrivals" endpoint={process.env.REACT_API_CALLS + '/products'} />
+  <Section title="Featured" // endpoint={process.env.REACT_API_CALLS + '/products'}
+  endpoint='/api/'/>
+  <Section title="New Arrivals" endpoint={process.env.REACT_API_CALLS + '/products'} />
       <Section title="Promotions" endpoint={process.env.REACT_API_CALLS + '/products'} />
       <Section title="Promotions" endpoint={process.env.REACT_API_CALLS + '/products'}  />
       <Section title="Promotions" endpoint={process.env.REACT_API_CALLS + '/products'}  />
