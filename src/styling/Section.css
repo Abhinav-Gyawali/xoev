@@ -1,17 +1,19 @@
 /* Section */
 .section {
-  width:100%;
+  width: 100%;
 }
 
 .section h2 {
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
 .section .items {
   display: flex;
   gap: 30px;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  padding-bottom: 10px; /* Add padding at the bottom to ensure space for scrollbar */
+  overflow-x: auto;
+  /* Enable horizontal scrolling */
+  padding-bottom: 10px;
+  /* Add padding at the bottom to ensure space for scrollbar */
 }
 
 .section .items {
@@ -30,9 +32,91 @@
 .section .items .item p {
   color: var(--text-color);
 }
-@media (max-width:720px){
+
+@media (max-width:720px) {
   .section .items .item img {
-  width: 230px;
-  border-radius: 10px;
+    width: 230px;
+    min-height: 230px;
+    max-height: 300px;
+    border-radius: 10px;
+  }
 }
+
+
+/* General section styling */
+.skeleton h2 {
+  
+  margin: 20px 0px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+/* Items container styling */
+.skeleton .items {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 30px;
+  overflow-x: hidden;
+  padding: 10px;
+}
+
+/* Skeleton item styling */
+.skeleton {
+  border-radius: 4px;
+  overflow: hidden;
+  animation: shimmer 1.5s infinite linear;
+}
+
+.skeleton .item {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skeleton .image {
+  width: 430px;
+  height: 450px;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+.skeleton h3 {
+  height: 27px;
+  width: 60%;
+  background-color: #e0e0e0;
+  margin: 10px 0;
+}
+
+.skeleton p {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 20px;
+  margin: 10px 0;
+}
+
+/* Keyframe animation for shimmer effect */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+.skeleton {
+  background-size: 200% 100%;
+}
+
+@media(max-width:720px) {
+  .skeleton .item {
+    height: 280px;
+  }
+  
+  .skeleton .image {
+    width: 230px;
+  }
 }

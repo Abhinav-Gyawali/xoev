@@ -1,4 +1,4 @@
-import React,{ useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../styling/Section.css'
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,7 @@ export default function Section({ title, endpoint }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigator = useNavigate();
+  const skeleton = [1,2,3]
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -19,24 +20,38 @@ export default function Section({ title, endpoint }) {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data", error);
-        setLoading(false); // Set loading to false to handle errors
       }
     };
 
     fetchData();
-  }, [endpoint]); // Include endpoint in dependencies if needed
-  
+  }, [endpoint]);
+  if (loading) {
+    return (
+      <div className="skeleton section">
+        <h2>{title}</h2>
+        <div className="items">
+        {skeleton.map((item, index) => (
+            <div className="item">
+              <div className="image" />
+              <h3></h3>
+              <p></p>
+            </div>
+        ))}
+        </div>
+      </div>
+    )
+  }
   return (
     <div className="section">
       <h2>{title}</h2>
       <div className="items">
-      {items.map(item => (
-            <div className="item" onClick={() => navigator(item.url)} key={item.id}>
-              <img src={item.image} alt={item.title} />
-              <h3>{item.title}</h3>
-              <p>${item.price}</p>
-            </div>
-          ))
+        {items.map(item => (
+          <div className="item" onClick={() => navigator(item.url)} key={item.id}>
+            <img src={item.image} alt={item.title} />
+            <h3>{item.title}</h3>
+            <p>${item.price}</p>
+          </div>
+        ))
         }
       </div>
     </div>
