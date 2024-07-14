@@ -13,7 +13,6 @@
   overflow-x: auto;
   /* Enable horizontal scrolling */
   padding-bottom: 10px;
-  /* Add padding at the bottom to ensure space for scrollbar */
 }
 
 .section .items {

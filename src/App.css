@@ -1,3 +1,4 @@
+
 :root {
   --primary-color: #002757;
   --secondary-color: #2ecc71;
@@ -7,17 +8,12 @@
   --font-inter-400-16:500 16px Poppins , Sans-Serif;
 }
 
-body{
-  background: var(--background-color);
-}
-
-
-/* Not Found */ 
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: var(--background-color);
+  width:100vw;
+  overflow-x: hidden;
   color: var(--text-color);
 }
 

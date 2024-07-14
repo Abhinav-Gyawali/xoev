@@ -41,7 +41,7 @@ const NavBar = ({ linksLeft, searchExpand }) => {
       <div className="navbar-icons">
         <div className="search-container">
           <div className="search-input">
-            <input type="text" value={searchValue} onChange={handleInputChange} id={ !searchExpand && search ? "expanded" : " disabled"} />
+            <input type="text" value={searchValue} onChange={handleInputChange} id={ searchExpand || search ? "expanded" : " disabled"} />
           </div>
           <Link onClick={handleSearchButton } className="icon-link">
             {search ? <FaTimes /> : <FaSearch />}
