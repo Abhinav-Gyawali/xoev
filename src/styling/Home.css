@@ -1,34 +1,44 @@
-*{
-  margin:0;
-  padding:0;
-}
-.main {
-  font-family: Poppins, sans-serif;
-  padding:0;
-  margin:0;
-}
-.content{
-  padding:0vw 12vw;
-  overflow-x:hidden;
-}
-.main header {
-  text-align: left;
-    width: 76vw;
-    display: flex;
-    align-items: flex-end;
-}
-.main header img{
-  width:76vw;
-  border-radius:15px;
-}
-.main header .header{
-  position:absolute;
-  padding:50px;
-  color:var(--background-color);
+* {
+  margin: 0;
+  padding: 0;
 }
 
-header .header h1{
+.main {
+  font-family: Poppins, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  padding: 0vw 12vw;
+  overflow-x: hidden;
+}
+
+.main header {
+  text-align: left;
+  width: 76vw;
+  display: flex;
+  align-items: flex-end;
+}
+
+.main header img {
+  width: 76vw;
+  border-radius: 15px;
+}
+
+.main header .header {
+  position: absolute;
+  padding: 50px;
+  color: var(--background-color);
+}
+
+header .header h1 {
   font-weight: 800;
+  text-shadow: 1px 1px 2px var(--text-color), 0 0 25px var(--primary-color), 0 0 5px var(--secondary-color);
+}
+
+.header p {
+  text-shadow: 1px 1px 2px var(--text-color), 0 0 25px var(--primary-color), 0 0 5px var(--secondary-color);
 }
 
 .main button {
@@ -39,17 +49,62 @@ header .header h1{
   border-radius: 5px;
 }
 
-@media(max-width:720px){
-  .content{
-    padding:0vw 5vw;
+@media(max-width:720px) {
+  .content {
+    padding: 0vw 5vw;
   }
-  .main header{
-    width:90vw;
+  
+  .main header {
+    width: 90vw;
   }
-  .main header img{
-    width:90vw;
+  
+  .main header img {
+    width: 90vw;
   }
-  .main header .header{
-    padding:10px;
+  
+  .main header .header {
+    padding: 10px;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hero {
+  position: relative;
+  width: 100%;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.hero h1 {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: #3E4452;
+  opacity: 1;
+  color: #fff;
+  font-weight: 900;
+  font-size: 4rem;
+  font-family: sans-serif;
+  mix-blend-mode: multiply;
+  user-select: none;
+  text-align: center;
+  border-radius: 20px;
 }

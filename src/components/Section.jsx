@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styling/Section.css';
 import { useNavigate } from 'react-router-dom';
@@ -36,8 +36,8 @@ export default function Section({ title, endpoint }) {
           {skeleton.map((item, index) => (
             <div className="item" key={index}>
               <div className="image" />
-              <h3></h3>
-              <p></p>
+              <h3> </h3>
+              <p> </p>
             </div>
           ))}
         </div>

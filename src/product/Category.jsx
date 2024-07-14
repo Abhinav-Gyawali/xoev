@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../styling/Category.css';
 import NavBar from '../elements/NavBar';
+import axios from 'axios';
 
 export default function Category() {
-
-  const [filterOpen, setFilterOpen] = useState(false);
-
-  const colorItems = [
-    { key: 'Red', color: 'red' },
-    { key: 'Blue', color: 'blue' },
-    { key: 'Green', color: 'green' },
-    { key: 'Yellow', color: 'yellow' },
-    { key: 'Purple', color: 'purple' },
-    { key: 'Pink', color: 'pink' },
-  ]
+  const [shorting, setShorting] = useState({
+    nameBased: '',
+    productBased: '',
+    priceBased: ''
+  });
   const [filters, setFilters] = useState({
     men: false,
     women: false,
@@ -26,13 +21,13 @@ export default function Category() {
     sneakers: false,
     sandals: false,
     't-shirts': false,
-    xs: false,
-    s: false,
-    m: false,
-    l: false,
-    xl: false,
-    xxl: false,
-    '3xl': false,
+    XS: false,
+    S: false,
+    M: false,
+    L: false,
+    XL: false,
+    XXL: false,
+    '3XL': false,
     red: false,
     blue: false,
     green: false,
@@ -40,21 +35,56 @@ export default function Category() {
     purple: false,
     pink: false,
   });
-  const [showFilters, setShowFilters] = useState(false);
+  const colorItems = [
+    { key: 'Red', color: 'red' },
+    { key: 'Blue', color: 'blue' },
+    { key: 'Green', color: 'green' },
+    { key: 'Yellow', color: 'yellow' },
+    { key: 'Purple', color: 'purple' },
+    { key: 'Pink', color: 'pink' },
+  ]
+  const gender = [
+    { key: 'men', value: 'Men' },
+    { key: 'women', value: 'Women' },
+    { key: 'kids', value: 'Kids' },
+    { key: 'unisex', value: 'Unisex' }
+  ]
+  const productType = [
+    { key: 'shorts', value: 'Shorts' },
+    { key: 'pants', value: 'Pants' },
+    { key: 'dresses', value: 'Dresses' },
+    { key: 'tops', value: 'Tops' },
+    { key: 'sneakers', value: 'Sneakers' },
+    { key: 'sandles', value: 'Sandles' },
+    { key: 't-shirts', value: 'T-shirts' }
+  ]
+  const size = ['XS', 'S', 'M', 'L', 'XL', 'XXL', '3XL'];
+
 
   const handleFilterClick = () => {
-    setFilterOpen(true);
     document.querySelector('#filterContainer').classList.add('active');
   };
 
   const handleCloseFilter = () => {
-    setShowFilters(false);
     document.querySelector('#filterContainer').classList.remove('active');
   };
 
-  const handleCheckboxChange = (filter) => {
-    setFilters({ ...filters, [filter]: !filters[filter] });
+
+  const handleFilterItemClick = (itemKey) => {
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [itemKey]: !prevFilters[itemKey]
+    }));
   };
+
+
+  const handleShorting = (category, type) => {
+    setShorting((prevShorting) => ({
+      ...prevShorting,
+      [category]: type
+    }));
+  };
+
   return (
     <div className="main">
       <NavBar />
@@ -64,41 +94,19 @@ export default function Category() {
             <h2 onClick={handleFilterClick}>Filter</h2>
             <div onClick={handleCloseFilter} id="filter-close">x</div>
             <div className="filter">
-              <span className='filter-item' key="men">
-                Men
-              </span>
-              <span className='filter-item' key="women">
-                Women
-              </span>
-              <span className='filter-item' key="kids">
-                Kids
-              </span>
-              <span className='filter-item' key="unisex">
-                Unisex
-              </span>
+              {gender.map(item => (
+                <span className={`filter-item ${filters[item.key] ? 'active' : ''}`} onClick={() => handleFilterItemClick(item.key)} key={item.key}>
+                  {item.value}
+                </span>
+              ))}
             </div>
             <div className="filter">
-              <span className='filter-item' key="shorts">
-                Pants
-              </span>
-              <span className='filter-item' key="pants">
-                Pants
-              </span>
-              <span className='filter-item' key="tops">
-                Tops
-              </span>
-              <span className='filter-item' key="dresses">
-                Dresses
-              </span>
-              <span className='filter-item' key="sneakers">
-                Sneakers
-              </span>
-              <span className='filter-item' key="sandles">
-                Sandles
-              </span>
-              <span className='filter-item' key="t-shi  rts">
-                T-shirts
-              </span>
+              {productType.map(item => (
+                <span className={`filter-item ${filters[item.key] ? 'active' : ''}`} onClick={() => handleFilterItemClick(item.key)} key={item.key}>
+                  {item.value}
+                </span>
+              ))}
+
             </div>
           </div>
           <div className="filters">
@@ -108,27 +116,12 @@ export default function Category() {
           <div className="filters">
             <h2>Size</h2>
             <div className="filter">
-              <span className='filter-item' key="XS">
-                XS
-              </span>
-              <span className='filter-item' key="S">
-                S
-              </span>
-              <span className='filter-item' key="M">
-                M
-              </span>
-              <span className='filter-item' key="L">
-                L
-              </span>
-              <span className='filter-item' key="XL">
-                XL
-              </span>
-              <span className='filter-item' key="XXL">
-                XXL
-              </span>
-              <span className='filter-item' key="3XL">
-                3XL
-              </span>
+              {size.map(item => (
+                <span className={`filter-item ${filters[item] ? 'active' : ''}`} onClick={() => handleFilterItemClick(item)} key={item}>
+                  {item}
+                </span>
+              ))}
+
             </div>
           </div>
           <div className="filters">
@@ -144,17 +137,105 @@ export default function Category() {
               ))}
             </div>
           </div>
+          <div className="filters">
+            <h2>Shorting</h2>
+            <div className="filter" id="nameBased">
+              <span
+                className={`filter-item ${shorting['nameBased'] === 'ascending' ? 'active' : ''}`}
+                onClick={() => handleShorting('nameBased', 'ascending')}
+              >
+                Short by: a-z
+              </span>
+              <span
+                className={`filter-item ${shorting['nameBased'] === 'decending' ? 'active' : ''}`}
+                onClick={() => handleShorting('nameBased', 'decending')}
+              >
+                z-a
+              </span>
+            </div>
+            <div className="filter" id="productBased">
+              <span
+                className={`filter-item ${shorting['productBased'] === 'fetured' ? 'active' : ''}`}
+                onClick={() => handleShorting('productBased', 'fetured')}
+              >
+                Featured
+              </span>
+              <span
+                className={`filter-item ${shorting['productBased'] === 'newest' ? 'active' : ''}`}
+                onClick={() => handleShorting('productBased', 'newest')}
+              >
+                Newest
+              </span>
+            </div>
+            <div className="filter" id="priceBased">
+              <span
+                className={`filter-item ${shorting['priceBased'] === 'LH' ? 'active' : ''}`}
+                onClick={() => { handleShorting('priceBased', 'LH') }}
+              >
+                Price: Low - High
+              </span>
+              <span
+                className={`filter-item ${shorting['priceBased'] === 'HL' ? 'active' : ''}`}
+                onClick={() => handleShorting('priceBased', 'HL')}
+              >
+                High - Low
+              </span>
+            </div>
+          </div>
         </div>
         <div className="main-container">
-        </div>
+          <ProductList searchQuery={`${process.env.REACT_APP_API_CALLS}/products`}/>
+          </div>
       </div>
     </div>
   )
 }
 
+const ProductList = ({searchQuery}) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    axios.get(searchQuery)
+      .then((response) => {
+        setProducts(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching the products:', error);
+      });
+  }, [searchQuery]);
 
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 1; i <= 5; i++) {
+      stars.push(
+        <span key={i} className={`star ${i <= rating ? 'filled' : ''}`}>
+          &#9733;
+        </span>
+      );
+    }
+    return stars;
+  };
 
-
-
-
+  return (
+    <div className="product-list">
+      {loading ? (
+        <div className="skeleton-list">
+          {[...Array(8)].map((_, index) => (
+            <div className="skeleton-item" key={index}></div>
+          ))}
+        </div>
+      ) : (
+        products.map((product) => (
+          <div className="product-item" key={product.id}>
+            <img src={product.image} alt={product.title} className="product-image" />
+            <h2 className="product-title">{product.title}</h2>
+            <div className="product-rating">{renderStars(product.rating)}</div>
+            <p className="product-price">${product.price}</p>
+          </div>
+        ))
+      )}
+    </div>
+  );
+};

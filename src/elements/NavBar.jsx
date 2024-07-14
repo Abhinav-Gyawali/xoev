@@ -30,7 +30,7 @@ const NavBar = ({ linksLeft, searchExpand }) => {
     <nav className="navbar">
       <div className="navbar-brand">
         
-        <Link to="/"><img class="brand-logo" src={Logo} /></Link>
+        <Link to="/"><img class="brand-logo" alt="XOEV" src={Logo} /></Link>
       </div>
       <div className={`navbar-links ${menuOpen ? 'active' : ''}`} id={linksLeft ? 'links-left' : ''}>
         <Link className="nav-link"  to="/about/">About</Link>
