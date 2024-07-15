@@ -3,12 +3,13 @@ import { FaSearch, FaUser, FaTimes, FaBars, FaShoppingCart } from 'react-icons/f
 import '../styling/NavBar.css'; // Create a CSS file for styling
 import { Link } from 'react-router-dom';
 import Logo from '../assets/Logo.jpg';
+import { useAuth0 } from "@auth0/auth0-react";
 
 const NavBar = ({ linksLeft, searchExpand }) => {
   const [search, setSearch] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchValue, setSearchValue] = useState();
-  
+  const { loginWithRedirect } = useAuth0();
   useEffect(() => {
     setSearch(searchExpand);
   }, [searchExpand]);
@@ -47,8 +48,8 @@ const NavBar = ({ linksLeft, searchExpand }) => {
             {search ? <FaTimes /> : <FaSearch />}
           </Link>
         </div>
-        <Link to="/" className="icon-link"><FaUser /></Link>
-        <Link to="/" className="icon-link"><FaShoppingCart /></Link>
+        <span className="icon-link" onClick={loginWithRedirect}><FaUser /></span>
+        <Link to="/user/cart" className="icon-link"><FaShoppingCart /></Link>
         <Link onClick={toggleMenu} className="icon-link hamburger-menu">
           {menuOpen ? <FaTimes /> : <FaBars />}
         </Link>
