@@ -16,6 +16,8 @@ const App = () => {
         <Route path="/about/" element={<About/>} />
         <Route path="/contact/" element={<Contact/>} />
         <Route path="/category/" element={<Category/>} />
+        {// <Route path="/checkout/" element={<CheckoutForm/>} />
+        }
         {/* Handle 404 - Not Found */}
         <Route path="*" element={<NotFound/>} />
       </Routes>
