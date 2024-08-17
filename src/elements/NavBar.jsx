@@ -38,6 +38,7 @@ const NavBar = ({ linksLeft, searchExpand }) => {
         <Link className="nav-link" to="/category/women">Women</Link>
         <Link className="nav-link" to="/category/men">Men</Link>
         <Link className="nav-link" to="/category/kids">Kids</Link>
+        <a target="_blank" href="xoev.vercel.app/app">Open In App</a>
       </div>
       <div className="navbar-icons">
         <div className="search-container">
