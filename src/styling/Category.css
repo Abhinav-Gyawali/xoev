@@ -56,7 +56,36 @@ span {
   background: var(--primary-color);
   color: var(--native-color);
 }
+.category .filters-buttons{
+  width:90%;
+    margin:20px 2%;
+  display:flex;justify-content:space-between;align-items:center;
+}
 
+.filters-buttons .button-container{
+  width:140px;
+  height:40px;
+  border-radius:30px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.filters-buttons .button-container button{
+  outline:none;border:none;
+  background:none;
+  color:inherit;
+  font-size:15px;
+  font-weight:600;
+}
+
+.button-container.primary{
+  background:var(--primary-color);
+  color:white;
+}
+.button-container.secondary{
+  background:#b2b2b2;
+  color:black;
+}
 #filter-close {
   position: absolute;
   z-index: 3;

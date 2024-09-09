@@ -5,6 +5,8 @@ import About from './brand/About';
 import Contact from './brand/Contact';
 import NotFound from './error/NotFound';
 import Category from './product/Category';
+import NavBar from './elements/NavBar';
+import Footer from './elements/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
@@ -21,6 +23,7 @@ const App = () => {
         {/* Handle 404 - Not Found */}
   {/*<Route path="*" element={<NotFound/>} />*/}
       </Routes>
+      <Footer/>
     </Router>
   );
 };

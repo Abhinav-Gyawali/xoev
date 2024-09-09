@@ -77,6 +77,19 @@ export default function Category() {
     }));
   };
 
+  const resetFilters = () => {
+    const allFalseFilters = Object.keys(filters).reduce((acc, key) => {
+      acc[key] = false;
+      return acc;
+    }, {});
+    setFilters(allFalseFilters);
+
+    const allBlankShorting = Object.keys(shorting).reduce((acc, key) => {
+      acc[key] = "";
+      return acc;
+    }, {});
+    setShorting(allBlankShorting);
+  };
 
   const handleShorting = (category, type) => {
     setShorting((prevShorting) => ({
@@ -180,6 +193,14 @@ export default function Category() {
               >
                 High - Low
               </span>
+            </div>
+          </div>
+          <div className="filters-buttons">
+            <div className="button-container secondary">
+              <button onClick={resetFilters}>Reset</button>
+            </div>
+            <div className="button-container primary">
+              <button>Apply</button>
             </div>
           </div>
         </div>

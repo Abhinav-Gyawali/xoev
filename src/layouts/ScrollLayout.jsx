@@ -3,7 +3,7 @@ import axios from 'axios';
 import '../styling/Section.css';
 import { useNavigate } from 'react-router-dom';
 
-export default function Section({ title, endpoint }) {
+export default function ScrollLayout({ title, endpoint }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigator = useNavigate();
