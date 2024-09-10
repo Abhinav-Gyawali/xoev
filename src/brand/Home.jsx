@@ -1,10 +1,10 @@
 import React from 'react';
 import Slider from 'react-slick';
-import './HomePage.css';
+import '../styling/Home.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const HomePage = () => {
+const Home = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -88,4 +88,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default Home;
