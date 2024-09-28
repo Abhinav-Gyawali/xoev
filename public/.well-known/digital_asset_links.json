@@ -3,8 +3,8 @@
     "relation": [ "delegate_permission/common.handle_all_urls" ],
     "target": {
       "namespace": "android_app",
-      "package_name": "net.myhotspot",
-      "sha256_cert_fingerprints": [ "A4:0D:A8:0A:59:D1:70:CA:A9:50:CF:15:C1:8C:45:4D:47:A3:9B:26:98:9D:8B:64:0E:CD:74:5B:A7:1B:F5:DC" ]
+      "package_name": "com.f1soft.esewa",
+      "sha256_cert_fingerprints": [ "C2:0B:8A:32:6A:D0:DE:C2:40:D6:B2:F5:CD:13:7B:AB:23:9E:23:6E:01:10:B2:9D:C6:21:CA:21:E8:D4:D9:F4" ]
     }
   }
 ]
